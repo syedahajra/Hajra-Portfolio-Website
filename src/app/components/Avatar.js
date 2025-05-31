@@ -15,6 +15,37 @@ export default function SimpleAvatar(props) {
 
   useEffect(() => {
     clone.traverse((child) => {
+      if (!child.isBone) return;
+
+      // Arms
+      if (child.name === "LeftArm") {
+        child.rotation.z = -0.3;
+        child.rotation.x = 1.2;
+        child.rotation.y = 0.7;
+      }
+      if (child.name === "RightArm") {
+        child.rotation.z = 0.1;
+        child.rotation.x = 1.2;
+        child.rotation.y = -0.3;
+      }
+
+      // Forearms
+      if (child.name === "LeftForeArm") {
+        child.rotation.x = -0.2;
+      }
+      if (child.name === "RightForeArm") {
+        child.rotation.x = -0.2;
+      }
+
+      // Legs
+      if (child.name === "LeftUpLeg") {
+        child.rotation.x = -0.01;
+        child.rotation.y = 0.06; // Narrow stance
+      }
+      if (child.name === "RightUpLeg") {
+        child.rotation.z = 3.2;
+        child.rotation.y = -0.05;
+      }
       if (child.isBone) {
         if (child.name === "LeftEye") leftEyeBone.current = child;
         if (child.name === "RightEye") rightEyeBone.current = child;
