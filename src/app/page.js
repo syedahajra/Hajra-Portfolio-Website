@@ -12,14 +12,14 @@ export default function Home() {
           <ambientLight intensity={1.8} />
           <directionalLight position={[0, 5, 5]} intensity={1.2} />
           <OrbitControls enableZoom={true} minDistance={2} maxDistance={6} target={[0, 1, 0]} />
-          <Avatar position={[0, -0.4, 0]} scale={[1.5, 1.5, 1.5]} />
+          <Avatar position={[0, -0.4, 0]} scale={[1.6, 1.6, 1.6]} />
         </Canvas>
       </div>
 
       {/* Right: Text Content */}
       <div style={{ flex: 1, padding: "3rem", color: "white", display: "flex", flexDirection: "column", justifyContent: "center" }}>
         <h1 style={{ fontSize: "3rem", marginBottom: "1rem", fontFamily: "Georgia, serif" }}>
-          Hi, I'm [Your Name]
+          {`I'm Syeda Hajra`}
         </h1>
         <p style={{ fontSize: "1.2rem", lineHeight: 1.8 }}>
           A passionate developer blending technology and creativity.<br />
