@@ -3,11 +3,13 @@ import { motion } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Avatar from "@/app/components/Avatar";
+import Fireflies from "./Fireflies"; // Adjust path if needed
 
 export default function HeroSection() {
   return (
     <section className="flex flex-col md:flex-row h-screen text-white px-6 md:px-16 ">
       {/* left avatar area */}
+      <Fireflies />
       <div className="flex-1 hidden md:block">
         <Canvas camera={{ position: [0, 1.6, 4], fov: 45 }}>
           <ambientLight intensity={1.8} />
