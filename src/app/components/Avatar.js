@@ -136,7 +136,7 @@ export default function SimpleAvatar(props) {
             initialRightForeArmRotation.current
           );
         }
-      }, 1000);
+      }, 1500);
     }
   };
 
