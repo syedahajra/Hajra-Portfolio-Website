@@ -127,7 +127,7 @@ export default function SimpleAvatar(props) {
 
         morphTargets.forEach((mesh) => {
           mesh.morphTargetInfluences[0] = 0;
-          mesh.morphTargetInfluences[1] = 0.5; 
+          mesh.morphTargetInfluences[1] = 0.3; 
         });
 
         if (rightArm.current && rightForeArm.current) {
