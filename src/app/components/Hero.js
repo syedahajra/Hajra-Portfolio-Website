@@ -12,8 +12,8 @@ export default function HeroSection() {
       <Fireflies />
       <div className="flex-1 hidden md:block">
         <Canvas camera={{ position: [0, 1.6, 4], fov: 45 }}>
-          <ambientLight intensity={1.8} />
-          <directionalLight position={[0, 5, 5]} intensity={1.2} />
+          <ambientLight intensity={2.2} />
+          <directionalLight position={[0, 5, 5]} intensity={1.4} />
           <OrbitControls
             enableZoom={true}
             minDistance={2}

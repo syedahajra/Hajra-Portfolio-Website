@@ -50,7 +50,7 @@ const Fireflies = ({ count = 50 }) => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none"
+      className="fixed top-0 left-0 w-full h-1/2 z-0 pointer-events-none"
     />
   );
 };
