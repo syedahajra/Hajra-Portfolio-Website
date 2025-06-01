@@ -5,11 +5,11 @@ export default function AboutSection() {
         About Me
       </h2>
       <p style={{ fontSize: "1.1rem", lineHeight: 1.8 }}>
-        I'm Syeda Hajra, a frontend developer with a passion for building clean, user-friendly interfaces.
-        I enjoy combining design and code, and I've worked on projects ranging from 3D interfaces to full-stack apps.
-        My stack includes React.js, Next.js, Tailwind CSS, Flask, Django, Prisma, and PostgreSQL. <br /><br />
-        I'm also exploring ethical hacking and enjoy learning how things work under the hood.
-      </p>
+  I&apos;m Syeda Hajra, a frontend developer with a passion for building clean, user-friendly interfaces.
+  I enjoy combining design and code, and I&apos;ve worked on projects ranging from 3D interfaces to full-stack apps.
+  My stack includes React.js, Next.js, Tailwind CSS, Flask, Django, Prisma, and PostgreSQL. <br /><br />
+  I&apos;m also exploring ethical hacking and enjoy learning how things work under the hood.
+</p>
     </section>
   );
 }

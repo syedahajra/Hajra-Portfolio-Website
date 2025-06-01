@@ -91,15 +91,15 @@ export default function SimpleAvatar(props) {
     }
 
     // Eye rotation
-    if (leftEyeBone.current && rightEyeBone.current) {
-      const eyeRotX = -my * 0.2;
-      const eyeRotY = mx * 0.2;
-      const eyeQuat = new THREE.Quaternion().setFromEuler(
-        new THREE.Euler(eyeRotX, eyeRotY, 0, "YXZ")
-      );
-      leftEyeBone.current.quaternion.slerp(eyeQuat, 0.2);
-      rightEyeBone.current.quaternion.slerp(eyeQuat, 0.2);
-    }
+    // if (leftEyeBone.current && rightEyeBone.current) {
+    //   const eyeRotX = -my * 0.2;
+    //   const eyeRotY = mx * 0.2;
+    //   const eyeQuat = new THREE.Quaternion().setFromEuler(
+    //     new THREE.Euler(eyeRotX, eyeRotY, 0, "YXZ")
+    //   );
+    //   leftEyeBone.current.quaternion.slerp(eyeQuat, 0.2);
+    //   rightEyeBone.current.quaternion.slerp(eyeQuat, 0.2);
+    // }
 
     // Waving animation
     if (isWaving && rightForeArm.current && rightArm.current) {
@@ -136,7 +136,7 @@ export default function SimpleAvatar(props) {
             initialRightForeArmRotation.current
           );
         }
-      }, 3000);
+      }, 1000);
     }
   };
 
