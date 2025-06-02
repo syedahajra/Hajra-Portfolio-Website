@@ -105,7 +105,7 @@ export default function AboutSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            I'm a passionate full-stack developer with a love for creating beautiful, 
+            {`I'm`} a passionate full-stack developer with a love for creating beautiful, 
             functional digital experiences. With a background in both design and development, 
             I bridge the gap between aesthetics and functionality.
           </motion.p>
