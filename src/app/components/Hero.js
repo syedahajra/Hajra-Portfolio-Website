@@ -88,7 +88,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span onMouseEnter={handleHeyHover}>Hey</span>, I'm Syeda Hajra
+            <span onMouseEnter={handleHeyHover}>Hey</span>, {`I'm Syeda Hajra`}
           </motion.h1>
 
           <motion.p
@@ -97,14 +97,14 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            I'm a{" "}
+            {`I'm`} a{" "}
             <span className="text-purple-300 font-medium">
               Fullstack developer
             </span>{" "}
             who loves turning ideas into things people actually enjoy using. 
-            <span className="ml-1 text-[#d1d1e9]">
-               Into UIs that feel nice and work even better. Recently trying out
-              3D with Three.js — it's chaotic, but fun.
+            <span className="text-[#d1d1e9]">
+              {" "}Into UIs that feel nice and work even better. Recently trying out
+              3D with Three.js — {`it's`} chaotic, but fun.
             </span>
           </motion.p>
 
