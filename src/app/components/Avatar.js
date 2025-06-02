@@ -5,7 +5,7 @@ import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import { SkeletonUtils } from "three-stdlib";
 
-export default function SimpleAvatar(props) {
+export default function SimpleAvatar({ wave, ...props }) {
   const { scene } = useGLTF("/models/avatar.glb");
   const clone = useMemo(() => SkeletonUtils.clone(scene), [scene]);
 
@@ -102,7 +102,8 @@ export default function SimpleAvatar(props) {
     }
 
     // Waving animation
-    if (isWaving && rightForeArm.current && rightArm.current) {
+    // Waving animation - modified to use the wave prop
+    if (wave && rightForeArm.current && rightArm.current) {
       wavePhase.current += 0.15;
       const wave = Math.sin(wavePhase.current) * 0.4;
       rightArm.current.rotation.x = 0.8;
@@ -111,34 +112,47 @@ export default function SimpleAvatar(props) {
       rightForeArm.current.rotation.z = 0.2;
 
       morphTargets.forEach((mesh) => {
-        mesh.morphTargetInfluences[0] = 0.2; // mouthOpen
-        mesh.morphTargetInfluences[1] = 0.6; // mouthSmile
+        if (mesh.morphTargetInfluences) {
+          mesh.morphTargetInfluences[0] = 0.2; // mouthOpen
+          mesh.morphTargetInfluences[1] = 0.6; // mouthSmile
+        }
+      });
+    } else if (!wave && rightArm.current && rightForeArm.current) {
+      // Reset to initial positions when not waving
+      rightArm.current.rotation.copy(initialRightArmRotation.current);
+      rightForeArm.current.rotation.copy(initialRightForeArmRotation.current);
+      
+      morphTargets.forEach((mesh) => {
+        if (mesh.morphTargetInfluences) {
+          mesh.morphTargetInfluences[0] = 0;
+          mesh.morphTargetInfluences[1] = 0.3;
+        }
       });
     }
   });
 
-  const handleClick = () => {
-    if (!isWaving) {
-      setIsWaving(true);
-      setTimeout(() => {
-        setIsWaving(false);
+  // const handleClick = () => {
+  //   if (!isWaving) {
+  //     setIsWaving(true);
+  //     setTimeout(() => {
+  //       setIsWaving(false);
 
-        //Reset to inital postiitons
+  //       //Reset to inital postiitons
 
-        morphTargets.forEach((mesh) => {
-          mesh.morphTargetInfluences[0] = 0;
-          mesh.morphTargetInfluences[1] = 0.3; 
-        });
+  //       morphTargets.forEach((mesh) => {
+  //         mesh.morphTargetInfluences[0] = 0;
+  //         mesh.morphTargetInfluences[1] = 0.3; 
+  //       });
 
-        if (rightArm.current && rightForeArm.current) {
-          rightArm.current.rotation.copy(initialRightArmRotation.current);
-          rightForeArm.current.rotation.copy(
-            initialRightForeArmRotation.current
-          );
-        }
-      }, 1500);
-    }
-  };
+  //       if (rightArm.current && rightForeArm.current) {
+  //         rightArm.current.rotation.copy(initialRightArmRotation.current);
+  //         rightForeArm.current.rotation.copy(
+  //           initialRightForeArmRotation.current
+  //         );
+  //       }
+  //     }, 1500);
+  //   }
+  // };
 
-  return <primitive object={clone} {...props} onClick={handleClick} />;
+  return <primitive object={clone} {...props}  />;
 }
