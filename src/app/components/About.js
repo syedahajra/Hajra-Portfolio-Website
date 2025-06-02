@@ -239,7 +239,7 @@ export default function AboutSection() {
                   <p className="text-white/90 leading-relaxed mb-6">
                     When not coding, I explore ethical hacking, NLP, and tweak
                     my portfolio more than I should. Currently diving deep into JS
-                    and React concepts to understand the "why" behind every line
+                    and React concepts to understand the {`"why"`} behind every line
                     of code becuase I noticed I started to rely too much on GPT.
                   </p>
                   <div className="flex flex-wrap gap-3">
