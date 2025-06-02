@@ -102,7 +102,6 @@ export default function SimpleAvatar({ wave, ...props }) {
     }
 
     // Waving animation
-    // Waving animation - modified to use the wave prop
     if (wave && rightForeArm.current && rightArm.current) {
       wavePhase.current += 0.15;
       const wave = Math.sin(wavePhase.current) * 0.4;
@@ -130,29 +129,6 @@ export default function SimpleAvatar({ wave, ...props }) {
       });
     }
   });
-
-  // const handleClick = () => {
-  //   if (!isWaving) {
-  //     setIsWaving(true);
-  //     setTimeout(() => {
-  //       setIsWaving(false);
-
-  //       //Reset to inital postiitons
-
-  //       morphTargets.forEach((mesh) => {
-  //         mesh.morphTargetInfluences[0] = 0;
-  //         mesh.morphTargetInfluences[1] = 0.3; 
-  //       });
-
-  //       if (rightArm.current && rightForeArm.current) {
-  //         rightArm.current.rotation.copy(initialRightArmRotation.current);
-  //         rightForeArm.current.rotation.copy(
-  //           initialRightForeArmRotation.current
-  //         );
-  //       }
-  //     }, 1500);
-  //   }
-  // };
 
   return <primitive object={clone} {...props}  />;
 }

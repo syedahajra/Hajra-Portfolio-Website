@@ -101,9 +101,10 @@ export default function HeroSection() {
             <span className="text-purple-300 font-medium">
               Fullstack developer
             </span>{" "}
-            who loves turning ideas into things people actually enjoy using. 
+            who loves turning ideas into things people actually enjoy using.
             <span className="text-[#d1d1e9]">
-              {" "}Into UIs that feel nice and work even better. Recently trying out
+              {" "}
+              Into UIs that feel nice and work even better. Recently trying out
               3D with Three.js — {`it's`} chaotic, but fun.
             </span>
           </motion.p>
