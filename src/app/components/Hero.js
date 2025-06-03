@@ -26,7 +26,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 overflow-hidden">
         <Fireflies />
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a]/80 via-[#1e3a8a]/50 to-[#6d28d9]/60 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0f172a] to-transparent pointer-events-none" />
+        {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0f172a] to-transparent pointer-events-none" /> */}
       </div>
 
       {/* Left avatar area */}
@@ -49,7 +49,7 @@ export default function HeroSection() {
             maxDistance={6}
             target={[0, 1, 0]}
             autoRotate
-            autoRotateSpeed={isHovered ? 0.2 : 0.5}
+            autoRotateSpeed={isHovered ? 0.2 : 0.4}
           />
           <ContactShadows
             opacity={0.8}
