@@ -1,51 +1,77 @@
 "use client";
 import { motion } from "framer-motion";
-import { Code, ExternalLink, Github, MoveRight } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/app/components/ui/card";
+import {
+  Clapperboard,
+  Code,
+  ExternalLink,
+  Github,
+  MoveRight,
+} from "lucide-react";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/app/components/ui/card";
 
 const projects = [
-   {
-    title: "Facial Recognition System (Frontend)",
-    description: "Next.js frontend for real-time facial authentication interface with 98.7% accuracy model integration",
-    tags: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com/yourusername/facial-recognition-frontend",
-    demo: "https://facial-recognition-demo.vercel.app",
-    featured: true
+  {
+    title: "CrowdScan - Facial Recognition System (Frontend)",
+    description:
+      "Next.js frontend for real-time facial recognition interface  for crowded, occluded and age invariance images with 98.7% accuracy model integration",
+    tags: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "deepface"],
+    github: "https://github.com/syedahajra/CrowdScan",
+    demo: "https://crowdscan-fe.vercel.app",
+    videodemo:
+      "https://drive.google.com/file/d/16fcxGoQoAo9weHQLPLGfK4V4-68TcFFK/view?usp=sharing",
+    featured: true,
   },
   {
-    title: "Sentiment Analysis Dashboard",
-    description: "Real-time sentiment analysis of user feedback using NLP, personalized mood tracking, and visual charts",
-    tags: ["React", "Flask", "OpenAI API", "Prisma","NLP"],
-    github: "https://github.com/syedahajra/sentiment-analysis",
-    demo: null
+    title: "MoodVerse - Sentiment Analysis Dashboard",
+    description:
+      "Real-time sentiment analysis of user feedback using NLP, personalized mood tracking, and visual charts",
+    tags: ["React", "Flask", "OpenAI API", "Prisma", "NLP"],
+    github: "https://github.com/syedahajra/MoodVerse",
+    demo: null,
+    videodemo:
+      "https://drive.google.com/file/d/1L_mv0Af8jjdwKW_1d33VVZDVBNvl-hhy/view?usp=sharing",
   },
   {
-  title: "EAXEE UI & Backend Revamp",
-  description: "Revamped legacy dashboards with React, Tailwind CSS, and ShadCN/UI. Designed and implemented backend APIs in Java, created database tables, and supported a new portal by converting legacy data to JSON format for better integration.",
-  tags: ["React", "Material UI", "Java", "API Development", "JSON", "Apache ECharts"],
-  github: null,
-  demo: null
-}
-,
+    title: "EAXEE Platform Revamp",
+    description:
+      "Contributed to the modernization of EAXEE, an enterprise architecture management platform. Redesigned legacy dashboards using React, Tailwind CSS, and Material UI. On the backend, developed new Java APIs, created database schemas, and migrated legacy data into structured JSON format to support a new portal module.",
+    tags: [
+      "React",
+      "Tailwind CSS",
+      "Material UI",
+      "Java",
+      "API Development",
+      "Database Design",
+      "JSON",
+      "Apache ECharts",
+    ],
+    github: null,
+    demo: null,
+  },
   {
     title: "Interactive 3D Portfolio",
-    description: "Created an immersive 3D portfolio using Three.js and Framer Motion, demonstrating WebGL techniques and smooth animations within a Next.js framework.",
+    description:
+      "Created an immersive 3D portfolio using Three.js and Framer Motion, demonstrating WebGL techniques and smooth animations within a Next.js framework.",
     tags: ["Three.js", "WebGL", "Framer Motion", "Next.js"],
-    github: "https://github.com/syedahajra/3d-portfolio",
-    demo: "https://3d-portfolio-concept.vercel.app"
-  }
+    github: "https://github.com/syedahajra/Hajra-Portfolio-Website",
+    demo: "https://hajra-portfolio-website.vercel.app",
+  },
 ];
 
 export default function ProjectsSection() {
   return (
     <section id="projects" className="relative w-full py-20 px-6 md:px-16 ">
-      {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a]/90 via-[#1e3a8a]/70 to-[#6d28d9]/80 pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0f172a] to-transparent pointer-events-none" />
       </div>
-
-      {/* Content */}
+      {/* main details  */}
       <div className="relative max-w-6xl mx-auto z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -70,8 +96,9 @@ export default function ProjectsSection() {
           </div>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full mb-6" />
           <p className="text-lg text-white/90 max-w-3xl leading-relaxed">
-            Selected work showcasing my full-stack capabilities and design approach. 
-            Each project represents unique challenges and creative solutions.
+            Selected work showcasing my full-stack capabilities and design
+            approach. Each project represents unique challenges and creative
+            solutions.
           </p>
         </motion.div>
 
@@ -104,7 +131,6 @@ export default function ProjectsSection() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map((tag, i) => (
                       <span
@@ -115,8 +141,7 @@ export default function ProjectsSection() {
                       </span>
                     ))}
                   </div>
-
-                  {/* Links */}
+                  {/* links for wesbites and demo vids */}
                   <div className="flex gap-4">
                     {project.github && (
                       <motion.a
@@ -142,6 +167,18 @@ export default function ProjectsSection() {
                         Live Demo
                       </motion.a>
                     )}
+                    {project.videodemo && (
+                      <motion.a
+                        href={project.videodemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ y: -2 }}
+                        className="flex items-center gap-2 text-sm text-purple-300 hover:text-white transition-colors"
+                      >
+                        <Clapperboard size={16} />
+                        Watch Video
+                      </motion.a>
+                    )}
                     {!project.demo && !project.github && (
                       <span className="flex items-center gap-2 text-sm text-white/50">
                         <MoveRight size={16} />
@@ -150,15 +187,12 @@ export default function ProjectsSection() {
                     )}
                   </div>
                 </CardContent>
-
-                {/* Hover effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </Card>
             </motion.div>
           ))}
         </div>
-
-        {/* CTA */}
+        {/* cta */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -166,10 +200,13 @@ export default function ProjectsSection() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <p className="text-white/80 mb-6">Want to see more? Check out my GitHub or contact me for case studies.</p>
+          <p className="text-white/80 mb-6">
+            Want to see more? Check out my GitHub or contact me for case
+            studies.
+          </p>
           <div className="flex justify-center gap-4">
             <motion.a
-              href="https://github.com/yourusername"
+              href="https://github.com/syedahajra"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -2 }}
@@ -177,13 +214,6 @@ export default function ProjectsSection() {
             >
               <Github size={18} />
               GitHub Profile
-            </motion.a>
-            <motion.a
-              href="#contact"
-              whileHover={{ y: -2 }}
-              className="px-6 py-3 border border-purple-400/30 rounded-lg font-medium hover:bg-purple-900/30 transition-colors"
-            >
-              Discuss a Project
             </motion.a>
           </div>
         </motion.div>

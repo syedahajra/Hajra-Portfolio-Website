@@ -247,7 +247,7 @@ export default function AboutSection() {
                       "Ethical Hacking",
                       "UI Design",
                       "3D Web",
-                      "Chai > Coffee",
+                      "Painting",
                     ].map((hobby, i) => (
                       <motion.span
                         key={i}
