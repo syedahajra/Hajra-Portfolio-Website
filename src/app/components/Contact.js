@@ -336,9 +336,9 @@ export default function ContactSection() {
         </motion.div>
 
         <motion.div
-          className="absolute -left-10 bottom-1/4 hidden lg:block"
+          className="absolute -left-10 bottom-1/3 hidden lg:block"
           animate={{
-            y: [0, -15, 0],
+            y: [0, -10, 0],
             rotate: [0, -5, 5, 0],
           }}
           transition={{
