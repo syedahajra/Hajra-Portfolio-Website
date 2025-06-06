@@ -104,7 +104,7 @@ export default function SimpleAvatar({ wave, ...props }) {
 
     // Waving animation
     if (wave && rightForeArm.current && rightArm.current) {
-      wavePhase.current += 0.15;
+      wavePhase.current += 0.25;
       const wave = Math.sin(wavePhase.current) * 0.4;
       rightArm.current.rotation.x = 0.8;
       rightForeArm.current.rotation.x = -2.2 + wave;
