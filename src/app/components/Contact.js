@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, MapPin } from "lucide-react";
+import { Mail, Linkedin, Github, MapPin, FileText } from "lucide-react";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -166,9 +166,21 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="text-sm text-purple-200">Location</p>
-                    <p>Karachi, Pakistan (Open to remote opportunities globally)</p>
+                    <p>
+                      Karachi, Pakistan (Open to remote opportunities globally)
+                    </p>
                   </div>
                 </motion.div>
+                <motion.a
+                  href="/resume.pdf"
+                  download="Syeda_Hajra_Fullstack_Developer_Resume.pdf"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full px-6 py-3 text-purple-200 border border-purple-400/30 rounded-lg font-medium hover:bg-purple-900/30 transition-colors flex items-center justify-center gap-2 mt-4"
+                >
+                  <FileText size={18} />
+                  Download Resume (PDF)
+                </motion.a>
               </div>
             </motion.div>
           </motion.div>
@@ -309,7 +321,7 @@ export default function ContactSection() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 viewport={{ once: true }}
               >
-                I usually respond within 1–2 business days!
+                I usually respond within a few hours!
               </motion.p>
             </motion.div>
           </motion.div>

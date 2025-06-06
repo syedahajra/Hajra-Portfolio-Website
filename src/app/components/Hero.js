@@ -108,7 +108,15 @@ export default function HeroSection() {
               3D with Three.js — {`it's`} chaotic, but fun.
             </span>
           </motion.p>
-
+<motion.div
+      className="hidden md:flex items-center gap-2 mb-6 text-sm text-purple-300 animate-pulse"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1.5 }}
+    >
+      <span className="inline-block w-3 h-3 rounded-full bg-purple-400"></span>
+      <span>Pro tip: My avatar follows your cursor!</span>
+    </motion.div>
           <motion.div
             className="flex flex-wrap gap-4 mt-8"
             initial={{ opacity: 0 }}
@@ -135,30 +143,60 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.div
-            className="absolute -left-10 bottom-20 hidden md:block"
+            className="absolute -left-10 bottom-10 hidden md:block"
             animate={{
               y: [0, -15, 0],
               rotate: [0, 5, -5, 0],
             }}
             transition={{
-              duration: 4,
+              duration: 3,
               repeat: Infinity,
               ease: "easeInOut",
             }}
           >
-            <span className="text-2xl">👇</span>
+            <div className="relative h-8 w-8 flex items-center justify-center">
+              <div
+                className="absolute w-0 h-0 
+      border-l-[8px] border-r-[8px] border-t-[16px] 
+      border-l-transparent border-r-transparent 
+      z-10"
+              />
+              <motion.div
+                className="absolute w-0 h-0 
+        border-l-[12px] border-r-[12px] border-t-[24px] 
+        border-l-transparent border-r-transparent border-t-purple-400
+        opacity-70 blur-sm"
+                animate={{
+                  scale: [1, 1.3, 1],
+                  opacity: [0.6, 0.9, 0.6],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+
+              {/* Subtle particle effect */}
+              <motion.div
+                className="absolute w-1 h-1 bg-white rounded-full"
+                animate={{
+                  y: [0, -10, 0],
+                  opacity: [0, 0.8, 0],
+                  scale: [1, 1.5, 0.5],
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  delay: 0.5,
+                }}
+                style={{
+                  boxShadow: "0 0 6px 2px rgba(192, 132, 252, 0.7)",
+                }}
+              />
+            </div>
           </motion.div>
         </div>
-
-        <motion.p
-          className="mt-12 text-sm text-[#a0a0c2] flex items-center gap-2"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
-          <span className="inline-block w-4 h-4 rounded-full bg-green-400 animate-pulse"></span>
-          Currently building with Next.js, JavaScript, and Three.js
-        </motion.p>
       </div>
     </section>
   );
