@@ -6,7 +6,8 @@ import * as THREE from "three";
 import { SkeletonUtils } from "three-stdlib";
 
 export default function SimpleAvatar({ wave, ...props }) {
-  const { scene } = useGLTF("/models/avatar.glb");
+  // const { scene } = useGLTF("/models/avatar.glb");
+  const {scene} = useGLTF("/models/avatar_compressed.glb");
   const clone = useMemo(() => SkeletonUtils.clone(scene), [scene]);
 
   const leftEyeBone = useRef();

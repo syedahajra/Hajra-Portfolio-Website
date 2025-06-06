@@ -49,7 +49,6 @@ export default function ContactSection() {
       id="contact"
       className="relative min-h-screen w-full py-20 px-6 md:px-16 text-white overflow-hidden"
     >
-      {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a]/90 via-[#1e3a8a]/70 to-[#6d28d9]/80 pointer-events-none" />
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#0f172a] to-transparent pointer-events-none" />
@@ -167,10 +166,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="text-sm text-purple-200">Location</p>
-                    <p>
-                      Pakistan (Open to relocation or remote opportunities
-                      globally)
-                    </p>
+                    <p>Karachi, Pakistan (Open to remote opportunities globally)</p>
                   </div>
                 </motion.div>
               </div>
